@@ -110,7 +110,7 @@ add_action( 'after_setup_theme', 'paper_setup' );
  * @global int $content_width
  */
 function paper_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'paper_content_width', 640 );
+        $GLOBALS['content_width'] = apply_filters( 'paper_content_width', 860 );
 }
 add_action( 'after_setup_theme', 'paper_content_width', 0 );
 
@@ -138,8 +138,9 @@ add_action( 'widgets_init', 'paper_widgets_init' );
  * Enqueue scripts and styles.
  */
 function paper_scripts() {
-	wp_enqueue_style( 'paper-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'paper-style', 'rtl', 'replace' );
+        wp_enqueue_style( 'paper-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap', array(), null );
+        wp_enqueue_style( 'paper-style', get_stylesheet_uri(), array(), _S_VERSION );
+        wp_style_add_data( 'paper-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'paper-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

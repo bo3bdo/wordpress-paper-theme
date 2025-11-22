@@ -1,12 +1,12 @@
 /*!
-Theme Name: paper
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
+Theme Name: Paper WordPress
+Theme URI: https://themes.gohugo.io/themes/hugo-paper/
+Author: Paper Theme
+Author URI: https://themes.gohugo.io/themes/hugo-paper/
+Description: A clean WordPress theme inspired by the Hugo Paper layout.
+Version: 1.0.1
+Tested up to: 6.5
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: paper
@@ -966,4 +966,367 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Paper-inspired layout
+--------------------------------------------------------------*/
+:root {
+        --paper-bg: #f6f6f6;
+        --paper-surface: #ffffff;
+        --paper-text: #202124;
+        --paper-muted: #5c5f66;
+        --paper-accent: #2b7dfa;
+        --paper-border: #e4e6eb;
+        --paper-radius: 12px;
+}
+
+body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--paper-text);
+        background: var(--paper-bg);
+        line-height: 1.8;
+}
+
+a {
+        color: var(--paper-accent);
+        text-decoration: none;
+}
+
+a:hover,
+ a:focus {
+        color: #155ec6;
+        text-decoration: underline;
+}
+
+.site {
+        background: var(--paper-bg);
+}
+
+.layout-container {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+}
+
+.site-header {
+        background: var(--paper-bg);
+        border-bottom: 1px solid var(--paper-border);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+}
+
+.header-inner {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 1.5rem 0;
+}
+
+.site-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin: 0;
+}
+
+.site-title a {
+        color: var(--paper-text);
+}
+
+.site-description {
+        margin: 0.15rem 0 0;
+        color: var(--paper-muted);
+        font-size: 0.95rem;
+}
+
+.main-navigation {
+        margin-left: auto;
+}
+
+.main-navigation ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+
+.main-navigation a {
+        color: var(--paper-muted);
+        font-weight: 500;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+        color: var(--paper-text);
+}
+
+.menu-toggle {
+        display: none;
+        border: 1px solid var(--paper-border);
+        background: var(--paper-surface);
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        color: var(--paper-text);
+}
+
+.site-content {
+        padding: 3rem 0 4rem;
+}
+
+.site-main {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+}
+
+.page-header {
+        margin-bottom: 1.5rem;
+}
+
+.page-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        margin: 0 0 0.25rem;
+}
+
+.post-card {
+        background: var(--paper-surface);
+        border: 1px solid var(--paper-border);
+        border-radius: var(--paper-radius);
+        padding: 1.75rem;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+}
+
+.entry-header {
+        margin-bottom: 1rem;
+}
+
+.entry-meta-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        color: var(--paper-muted);
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+}
+
+.entry-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(1.5rem, 2vw + 1rem, 2.1rem);
+        margin: 0.35rem 0 0;
+}
+
+.entry-title a {
+        color: inherit;
+}
+
+.entry-content,
+.entry-summary {
+        color: var(--paper-text);
+}
+
+.entry-content p,
+.entry-summary p {
+        margin: 0 0 1.1rem;
+}
+
+.entry-content img,
+.entry-summary img,
+.post-thumbnail img,
+.post-card img {
+        border-radius: var(--paper-radius);
+        width: 100%;
+        height: auto;
+}
+
+.post-thumbnail {
+        margin: 0 -0.25rem 1.25rem;
+}
+
+.entry-content blockquote {
+        border-left: 4px solid var(--paper-accent);
+        margin: 0 0 1.5rem;
+        padding-left: 1rem;
+        color: var(--paper-muted);
+        font-style: italic;
+}
+
+.entry-content code,
+.entry-summary code {
+        background: #f0f4ff;
+        color: #1d3f8f;
+        padding: 0.15rem 0.35rem;
+        border-radius: 6px;
+        font-size: 0.95em;
+}
+
+.entry-content pre {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: var(--paper-radius);
+        overflow: auto;
+}
+
+.entry-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+        font-size: 0.95rem;
+        color: var(--paper-muted);
+}
+
+.read-more {
+        color: var(--paper-accent);
+        font-weight: 600;
+        text-decoration: none;
+}
+
+.read-more:hover,
+.read-more:focus {
+        text-decoration: underline;
+}
+
+.page-links {
+        margin-top: 1.25rem;
+        display: flex;
+        gap: 0.5rem;
+}
+
+.page-links a,
+.page-links span {
+        padding: 0.35rem 0.6rem;
+        border-radius: 8px;
+        background: var(--paper-bg);
+        color: var(--paper-text);
+}
+
+.navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+}
+
+.navigation .nav-links a {
+        display: inline-flex;
+        gap: 0.35rem;
+        align-items: center;
+        color: var(--paper-accent);
+}
+
+.site-footer {
+        background: var(--paper-bg);
+        border-top: 1px solid var(--paper-border);
+        padding: 2rem 0;
+}
+
+.footer-credits {
+        margin: 0;
+        color: var(--paper-muted);
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        flex-wrap: wrap;
+}
+
+.footer-credits .divider {
+        color: var(--paper-border);
+}
+
+.search-form,
+.widget_search form {
+        display: flex;
+        gap: 0.5rem;
+}
+
+.search-field,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid var(--paper-border);
+        border-radius: 10px;
+        background: var(--paper-surface);
+        font-family: inherit;
+}
+
+.search-submit,
+input[type="submit"],
+button {
+        background: var(--paper-accent);
+        color: #fff;
+        border: none;
+        padding: 0.65rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+}
+
+.search-submit:hover,
+input[type="submit"]:hover,
+button:hover {
+        background: #155ec6;
+}
+
+.comments-area {
+        margin-top: 2rem;
+}
+
+.comment-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+
+.comment-body {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--paper-border);
+}
+
+.comment-author .fn {
+        font-weight: 600;
+}
+
+@media (max-width: 960px) {
+        .header-inner {
+                flex-wrap: wrap;
+        }
+
+        .main-navigation {
+                width: 100%;
+        }
+
+        .main-navigation ul {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+        }
+}
+
+@media (max-width: 760px) {
+        .menu-toggle {
+                display: inline-flex;
+        }
+
+        .main-navigation ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 0.75rem;
+        }
+
+        .main-navigation.toggled ul {
+                display: flex;
+        }
+
+        .post-card {
+                padding: 1.4rem;
+        }
 }

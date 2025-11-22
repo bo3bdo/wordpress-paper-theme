@@ -11,21 +11,18 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'paper' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'paper' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'paper' ), 'paper', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+                </div><!-- .layout-container -->
+        </div><!-- #content -->
+
+        <footer id="colophon" class="site-footer">
+                <div class="layout-container site-info">
+                        <p class="footer-credits">
+                                <span>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></span>
+                                <span class="divider">&middot;</span>
+                                <span><?php esc_html_e( 'Powered by WordPress', 'paper' ); ?></span>
+                        </p>
+                </div><!-- .site-info -->
+        </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
